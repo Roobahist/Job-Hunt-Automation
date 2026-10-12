@@ -10,10 +10,10 @@ from job_hunt.errors import ConfigurationError
 from job_hunt.rendering.documents import TenantDocumentRenderer
 from job_hunt.rendering.latex import PdfLatexCompiler
 from job_hunt.rendering.profiles import (
-    CoverLetterRenderer,
-    CvRenderer,
     AtlasCoverLetterRenderer,
     AtlasCvRenderer,
+    CoverLetterRenderer,
+    CvRenderer,
     NovaCoverLetterRenderer,
     NovaCvRenderer,
 )

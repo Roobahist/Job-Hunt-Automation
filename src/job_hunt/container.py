@@ -31,8 +31,8 @@ from job_hunt.integrations.configuration import (
     validate_prompt_contract,
 )
 from job_hunt.integrations.constrained_workflow_ai import (
-    ConstrainedParallelGeminiWorkflowAI,
     ConstrainedParallelAtlasGeminiWorkflowAI,
+    ConstrainedParallelGeminiWorkflowAI,
 )
 from job_hunt.integrations.discovery_filters import FilteredDiscoveryProvider
 from job_hunt.integrations.discovery_router import DiscoveryRouter

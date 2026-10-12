@@ -11,8 +11,8 @@ from job_hunt.domain.models import Job, Qualification
 from job_hunt.errors import ConfigurationError
 from job_hunt.integrations.baserow import BaserowClient, BaserowJobRepository
 from job_hunt.integrations.configuration import (
-    COMMON_PROMPT_KEYS,
     ATLAS_PROMPT_KEYS,
+    COMMON_PROMPT_KEYS,
     NOVA_PROMPT_KEYS,
     BaserowConfigurationRepository,
     validate_prompt_contract,

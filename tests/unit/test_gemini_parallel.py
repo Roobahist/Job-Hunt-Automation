@@ -6,8 +6,8 @@ import pytest
 
 from job_hunt.domain.models import Job
 from job_hunt.integrations.gemini_parallel import (
-    ParallelGeminiWorkflowAI,
     ParallelAtlasGeminiWorkflowAI,
+    ParallelGeminiWorkflowAI,
 )
 
 

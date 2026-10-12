@@ -7,8 +7,8 @@ from job_hunt.domain.models import PromptDefinition
 from job_hunt.errors import ConfigurationError
 from job_hunt.integrations.gemini import GeminiWorkflowAI
 from job_hunt.integrations.gemini_parallel import (
-    ParallelGeminiWorkflowAI,
     ParallelAtlasGeminiWorkflowAI,
+    ParallelGeminiWorkflowAI,
 )
 
 
