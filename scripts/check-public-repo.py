@@ -21,12 +21,13 @@ FORBIDDEN_PATH = re.compile(r"(?:^|/)(?:\.env$|id_rsa|[^/]+\.pem$|[^/]+\.key$)",
 
 
 def inspect_paths() -> list[str]:
-    names = subprocess.run(
+    result = subprocess.run(
         ["git", "ls-files", "-z"],
         cwd=ROOT,
         capture_output=True,
         check=True,
-    ).stdout.decode().split("\0")
+    )
+    names = result.stdout.decode().split("\0")
 
     failures: list[str] = []
     for name in filter(None, names):
