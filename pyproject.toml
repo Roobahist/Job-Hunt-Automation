@@ -47,6 +47,7 @@ packages = ["src/job_hunt"]
 [tool.pytest.ini_options]
 addopts = "--strict-markers --cov=job_hunt --cov-report=term-missing --cov-fail-under=70"
 testpaths = ["tests"]
+pythonpath = ["."]
 markers = ["integration: requires local Redis or pdflatex", "live: calls configured external providers"]
 
 [tool.ruff]
