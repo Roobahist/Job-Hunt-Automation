@@ -17,6 +17,8 @@ def inspect_paths() -> list[str]:
     failures: list[str] = []
     for name in filter(None, tracked):
         path = ROOT / name
+        if path.resolve() == Path(__file__).resolve():
+            continue  # The denylist is written literally in this validator.
         if not path.is_file() or path.stat().st_size > 2_000_000:
             continue
         try:
