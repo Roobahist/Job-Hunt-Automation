@@ -1,0 +1,22 @@
+{
+  "models": [
+    {"provider": "gemini", "model": "gemini-3.5-flash-lite", "rpm": 15, "tpm": 250000},
+    {"provider": "gemini", "model": "gemini-3.1-flash-lite", "rpm": 15, "tpm": 250000, "supports_native_json_schema": true},
+    {"provider": "gemini", "model": "gemini-3.5-flash", "rpm": 5, "tpm": 250000, "supports_native_json_schema": false},
+    {"provider": "gemini", "model": "gemini-3.6-flash", "rpm": 5, "tpm": 250000, "supports_native_json_schema": true},
+    {"provider": "gemini", "model": "gemini-3.7-flash", "rpm": 5, "tpm": 250000, "supports_native_json_schema": true},
+    {"provider": "mistral", "model": "mistral-small-latest", "rpm": 50, "tpm": 50000, "supports_native_json_schema": true},
+    {"provider": "mistral", "model": "mistral-medium-latest", "rpm": 50, "tpm": 25000, "supports_native_json_schema": true},
+    {"provider": "mistral", "model": "mistral-large-latest", "rpm": 4, "tpm": 250000, "supports_native_json_schema": true},
+    {"provider": "deepseek", "model": "deepseek-v4-flash", "supports_native_json_schema": false},
+    {"provider": "deepseek", "model": "deepseek-v4-pro", "supports_native_json_schema": false},
+    {"provider": "deepseek", "model": "deepseek-chat", "supports_native_json_schema": false},
+    {"provider": "deepseek", "model": "deepseek-reasoner", "supports_native_json_schema": false},
+    {"provider": "openrouter", "model": "z-ai/glm-5.2:free", "supports_native_json_schema": true},
+    {"provider": "openrouter", "model": "nvidia/nemotron-3-ultra-550b-a55b:free", "supports_native_json_schema": false},
+    {"provider": "openrouter", "model": "stealth/ox-alpha", "supports_native_json_schema": false},
+    {"provider": "openrouter", "model": "minimax/minimax-m3:free", "supports_native_json_schema": false},
+    {"provider": "openrouter", "model": "nvidia/nemotron-3-super-120b-a12b:free", "supports_native_json_schema": true},
+    {"provider": "openrouter", "model": "google/gemma-4-31b-it:free", "supports_native_json_schema": false}
+  ]
+}

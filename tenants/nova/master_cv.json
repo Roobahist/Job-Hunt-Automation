@@ -1,0 +1,75 @@
+{
+  "summary": [
+    "Software engineer building reliable Python systems and data products.",
+    "Experienced with REST APIs, asynchronous workflows, SQL and automated testing."
+  ],
+  "skills": [
+    {
+      "label": "Languages",
+      "value": "Python, SQL, TypeScript"
+    },
+    {
+      "label": "Backend",
+      "value": "FastAPI, Celery, Redis, PostgreSQL"
+    },
+    {
+      "label": "Delivery",
+      "value": "Docker, GitHub Actions, pytest"
+    }
+  ],
+  "work_experience": [
+    {
+      "title": "Backend Developer",
+      "secondary": "",
+      "url": "",
+      "icon": "",
+      "organization": "Fictional Example Labs",
+      "date": "2024 - Present",
+      "content": [
+        "Built asynchronous API workflows with typed Python.",
+        "Added automated contract tests and service observability."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "Public Data Pipeline",
+      "secondary": "Personal project",
+      "url": "",
+      "icon": "",
+      "organization": "",
+      "date": "2025",
+      "status": "completed",
+      "importance": 9,
+      "technologies": [
+        "Python",
+        "FastAPI",
+        "SQL"
+      ],
+      "tags": [
+        "data-engineering",
+        "backend"
+      ],
+      "related_roles": [
+        "Software Engineer",
+        "Data Engineer"
+      ],
+      "related_work_experience": [],
+      "content": [
+        "Built a repeatable ingestion pipeline with validation and CLI controls.",
+        "Used synthetic data and automated tests for reliable demonstrations."
+      ]
+    }
+  ],
+  "awards": [
+    {
+      "title": "Example Technical Showcase",
+      "secondary": "",
+      "url": "",
+      "icon": "",
+      "organization": "Fictional Developer Community",
+      "date": "2025",
+      "content": []
+    }
+  ]
+}

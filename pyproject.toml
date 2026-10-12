@@ -1,0 +1,81 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "job-hunt-automation"
+version = "0.2.0"
+description = "Public portfolio edition of a multi-tenant AI-assisted job application system"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+  "apify-client>=2.4,<3",
+  "celery[redis]>=5.5,<6",
+  "fastapi>=0.116,<1",
+  "flower>=2,<3",
+  "google-genai>=1.30,<2",
+  "httpx>=0.28,<1",
+  "jsonschema>=4.23,<5",
+  "langchain-google-genai>=4,<5",
+  "langfuse>=4.14,<5",
+  "pydantic>=2.11,<3",
+  "pydantic-settings>=2.10,<3",
+  "python-multipart>=0.0.20,<1",
+  "redis>=6.4,<7",
+  "structlog>=25.4,<26",
+  "typer>=0.16,<1",
+  "uvicorn[standard]>=0.35,<1",
+]
+
+[project.optional-dependencies]
+dev = [
+  "mypy>=1.17,<2",
+  "pytest>=8.4,<9",
+  "pytest-cov>=6.2,<7",
+  "pytest-mock>=3.14,<4",
+  "respx>=0.22,<1",
+  "ruff>=0.12,<1",
+  "types-jsonschema>=4.26,<5",
+]
+
+[project.scripts]
+job-hunt = "job_hunt.cli:app"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/job_hunt"]
+
+[tool.pytest.ini_options]
+addopts = "--strict-markers --cov=job_hunt --cov-report=term-missing --cov-fail-under=70"
+testpaths = ["tests"]
+markers = ["integration: requires local Redis or pdflatex", "live: calls configured external providers"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 120
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM", "RUF"]
+
+[tool.ruff.lint.per-file-ignores]
+"src/job_hunt/worker.py" = ["E501"]
+
+[tool.ruff.format]
+exclude = ["src/job_hunt/worker.py"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+packages = ["job_hunt"]
+
+[[tool.mypy.overrides]]
+module = "job_hunt.worker"
+disable_error_code = ["arg-type", "no-any-return"]
+
+[tool.coverage.run]
+branch = true
+source = ["job_hunt"]
+omit = [
+  "src/job_hunt/cli.py",
+  "src/job_hunt/container.py",
+  "src/job_hunt/worker.py",
+]

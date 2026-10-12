@@ -1,0 +1,109 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: astral-sh/setup-uv@v6
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: uv sync --extra dev
+      - name: Public repository identity guard
+        run: uv run python scripts/check-public-repo.py
+      - name: Synthetic offline demo
+        run: uv run python examples/demo.py --output runs/demo
+      - name: Ruff lint
+        run: uv run ruff check .
+      - name: Ruff format changed Python files
+        shell: bash
+        run: |
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            base="origin/${{ github.base_ref }}"
+            mapfile -t files < <(git diff --name-only --diff-filter=ACMR "$base...HEAD" -- '*.py')
+          else
+            before="${{ github.event.before }}"
+            if [[ "$before" =~ ^0+$ ]]; then
+              mapfile -t files < <(git ls-files '*.py')
+            else
+              mapfile -t files < <(git diff --name-only --diff-filter=ACMR "$before" HEAD -- '*.py')
+            fi
+          fi
+
+          if ((${#files[@]})); then
+            printf 'Checking Ruff formatting for:\n'
+            printf '  %s\n' "${files[@]}"
+            uv run ruff format --check "${files[@]}"
+          else
+            echo 'No changed Python files to format-check.'
+          fi
+      - name: Mypy
+        run: uv run mypy
+      - name: Tests
+        run: uv run pytest
+      - name: Validate shell script syntax
+        run: |
+          bash -n scripts/deploy-vps.sh
+          bash -n scripts/deploy-plan.sh
+          bash -n scripts/search-container-logs.sh
+
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Prepare Compose environment
+        run: cp .env.example .env
+      - name: Validate Compose configuration
+        run: docker compose config --quiet
+      - name: Build API image
+        run: docker build --target api -t job-hunt-api .
+      - name: Generate LiteLLM smoke config
+        run: >-
+          docker run --rm
+          -e GEMINI_API_KEY_1=dummy-gemini-key
+          -e DEEPSEEK_API_KEY_1=dummy-deepseek-key
+          -e MISTRAL_API_KEY_1=dummy-mistral-key
+          -e OPENROUTER_API_KEY_1=dummy-openrouter-key
+          -e LITELLM_MASTER_KEY=sk-ci-litellm
+          -e LITELLM_CONFIG_STDOUT=true
+          job-hunt-api python scripts/generate-litellm-config.py
+          > config/litellm.runtime.yaml
+      - name: Start LiteLLM proxy from generated config
+        run: |
+          docker run -d --name litellm-smoke -p 4000:4000 \
+            -v "$PWD/config/litellm.runtime.yaml:/app/config.yaml:ro" \
+            -e GEMINI_API_KEY_1=dummy-gemini-key \
+            -e DEEPSEEK_API_KEY_1=dummy-deepseek-key \
+            -e MISTRAL_API_KEY_1=dummy-mistral-key \
+            -e OPENROUTER_API_KEY_1=dummy-openrouter-key \
+            -e LITELLM_MASTER_KEY=sk-ci-litellm \
+            ghcr.io/berriai/litellm:main-stable \
+            --config /app/config.yaml --port 4000
+          for i in $(seq 1 60); do
+            if curl -fsS http://127.0.0.1:4000/health/liveliness >/dev/null; then
+              break
+            fi
+            if [ "$i" -eq 60 ]; then
+              docker logs litellm-smoke
+              exit 1
+            fi
+            sleep 1
+          done
+          curl -fsS -H 'Authorization: Bearer sk-ci-litellm' http://127.0.0.1:4000/v1/models > /tmp/models.json
+          grep -q 'job-fast' /tmp/models.json
+          grep -q 'job-balanced' /tmp/models.json
+          grep -q 'job-powerful' /tmp/models.json
+          grep -q 'repair-fast' /tmp/models.json
+          grep -q 'repair-balanced' /tmp/models.json
+          docker rm -f litellm-smoke
+      - name: Build document image
+        run: docker build --target worker -t job-hunt-documents .
+      - name: Compile Atlas CV with real pdflatex
+        run: docker run --rm job-hunt-documents python scripts/check-atlas-latex.py

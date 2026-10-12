@@ -1,0 +1,55 @@
+{
+  "jobs": [
+    {
+      "company_name": "Fictional Northstar Analytics",
+      "title": "Python Data Engineer",
+      "description": "Create production data pipelines with Python, SQL, and Docker.",
+      "url": "https://example.org/jobs/python-data-engineer?campaign=demo",
+      "location": "Remote, Canada",
+      "contract_type": "full-time",
+      "required_skills": [
+        "Python",
+        "SQL",
+        "Docker"
+      ]
+    },
+    {
+      "company_name": "Fictional Civic Cloud",
+      "title": "Backend Developer",
+      "description": "Design FastAPI services with Redis, Celery, and automated tests.",
+      "url": "https://example.org/jobs/backend-developer",
+      "location": "Remote, Canada",
+      "contract_type": "full-time",
+      "required_skills": [
+        "FastAPI",
+        "Redis",
+        "Celery"
+      ]
+    },
+    {
+      "company_name": "Fictional Vertex Studio",
+      "title": "Frontend Designer",
+      "description": "Build interactive web interfaces with React and Figma.",
+      "url": "https://example.org/jobs/frontend-designer",
+      "location": "On-site",
+      "contract_type": "contract",
+      "required_skills": [
+        "React",
+        "Figma"
+      ]
+    },
+    {
+      "company_name": "Fictional Northstar Analytics",
+      "title": "Python Data Engineer",
+      "description": "Duplicate posting with a tracking query string.",
+      "url": "https://example.org/jobs/python-data-engineer?tracking=duplicate",
+      "location": "Remote, Canada",
+      "contract_type": "full-time",
+      "required_skills": [
+        "Python",
+        "SQL",
+        "Docker"
+      ]
+    }
+  ]
+}

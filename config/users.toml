@@ -1,0 +1,18 @@
+# Synthetic tenant registry. Replace table IDs and secrets with your own values.
+[users.atlas]
+enabled = true
+renderer = "atlas"
+config_table_id = 101
+baserow_base_url = "https://api.baserow.io"
+tenant_root = "tenants/atlas"
+baserow_token_env = "ATLAS_BASEROW_TOKEN"
+fillout_secret_env = "ATLAS_FILLOUT_WEBHOOK_SECRET"
+
+[users.nova]
+enabled = true
+renderer = "nova"
+config_table_id = 102
+baserow_base_url = "https://api.baserow.io"
+tenant_root = "tenants/nova"
+baserow_token_env = "NOVA_BASEROW_TOKEN"
+fillout_secret_env = "NOVA_FILLOUT_WEBHOOK_SECRET"

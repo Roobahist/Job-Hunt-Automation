@@ -1,0 +1,183 @@
+x-app-depends: &app-depends
+  redis:
+    condition: service_healthy
+  litellm:
+    condition: service_healthy
+
+# Docker's default json-file logs disappear with the container. Journald keeps the
+# history independently of container lifecycle, so forced recreates during deploys
+# do not destroy the previous worker and LiteLLM logs.
+x-persistent-logging: &persistent-logging
+  driver: journald
+  options:
+    tag: "{{.Name}}"
+
+services:
+  api:
+    image: job-hunt-automation-api:latest
+    build:
+      context: .
+      target: api
+    env_file: .env
+    ports: ["127.0.0.1:8000:8000"]
+    volumes:
+      - artifacts:/app/runs
+      - ./config:/app/config:ro
+      - ./tenants:/app/tenants:ro
+    depends_on: *app-depends
+    logging: *persistent-logging
+    restart: unless-stopped
+
+  test:
+    image: job-hunt-automation-api:latest
+    env_file: .env
+    command: uv run --frozen --extra dev pytest -q
+    volumes:
+      - ./src:/app/src:ro
+      - ./tests:/app/tests:ro
+      - ./config:/app/config:ro
+      - ./tenants:/app/tenants:ro
+      - ./pyproject.toml:/app/pyproject.toml:ro
+      - ./uv.lock:/app/uv.lock:ro
+    depends_on: {redis: {condition: service_healthy}}
+    logging: *persistent-logging
+    profiles: ["tools"]
+    restart: "no"
+
+  litellm:
+    image: ghcr.io/berriai/litellm:main-stable
+    env_file: .env
+    environment:
+      DATABASE_URL: postgresql://litellm:${LITELLM_DATABASE_PASSWORD:?LITELLM_DATABASE_PASSWORD must be set}@litellm-db:5432/litellm
+      LITELLM_OTEL_V2: ${JOB_HUNT_LANGFUSE_ENABLED:-false}
+      LANGFUSE_HOST: ${LANGFUSE_BASE_URL:-https://us.cloud.langfuse.com}
+      OTEL_ENVIRONMENT_NAME: ${JOB_HUNT_ENVIRONMENT:-development}
+      OTEL_INSTRUMENTATION_GENAI_CAPTURE_MESSAGE_CONTENT: span_only
+    command: ["--config", "/app/config.yaml", "--port", "4000"]
+    volumes:
+      - ./config/litellm.runtime.yaml:/app/config.yaml:ro
+    ports:
+      - "127.0.0.1:4000:4000"
+    healthcheck:
+      test:
+        ["CMD-SHELL", "python -c \"import urllib.request; urllib.request.urlopen('http://localhost:4000/health/liveliness')\""]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 180s
+    depends_on:
+      redis:
+        condition: service_healthy
+      litellm-db:
+        condition: service_healthy
+    logging: *persistent-logging
+    restart: unless-stopped
+
+  # Non-rendering workers reuse the lightweight API image. They do not carry TeX packages.
+  worker-fast:
+    image: job-hunt-automation-api:latest
+    env_file: .env
+    command: >-
+      celery -A job_hunt.worker.celery_app worker
+      --loglevel=INFO -Q fast --hostname=fast@%h
+      --concurrency=${FAST_WORKER_CONCURRENCY:-3}
+    volumes:
+      - artifacts:/app/runs
+      - ./config:/app/config:ro
+      - ./tenants:/app/tenants:ro
+    depends_on: *app-depends
+    logging: *persistent-logging
+    restart: unless-stopped
+
+  # Only the document queue uses the TeX-enabled image.
+  worker-documents:
+    image: job-hunt-automation-documents:latest
+    build:
+      context: .
+      target: worker
+    env_file: .env
+    command: >-
+      celery -A job_hunt.worker.celery_app worker
+      --loglevel=INFO -Q documents --hostname=documents@%h
+      --concurrency=${DOCUMENT_WORKER_CONCURRENCY:-1}
+    volumes:
+      - artifacts:/app/runs
+      - ./config:/app/config:ro
+      - ./tenants:/app/tenants:ro
+    depends_on: *app-depends
+    logging: *persistent-logging
+    restart: unless-stopped
+
+  worker-notifications:
+    image: job-hunt-automation-api:latest
+    env_file: .env
+    command: >-
+      celery -A job_hunt.worker.celery_app worker
+      --loglevel=INFO -Q notifications --hostname=notifications@%h
+      --concurrency=${NOTIFICATION_WORKER_CONCURRENCY:-1}
+    volumes:
+      - artifacts:/app/runs
+      - ./config:/app/config:ro
+      - ./tenants:/app/tenants:ro
+    depends_on: *app-depends
+    logging: *persistent-logging
+    restart: unless-stopped
+
+  beat:
+    image: job-hunt-automation-api:latest
+    env_file: .env
+    command: >-
+      sh -c 'python -m job_hunt.recovery || echo "Missed-discovery recovery hook failed; starting beat anyway." >&2;
+      exec celery -A job_hunt.worker.celery_app beat --loglevel=INFO'
+    volumes:
+      - ./config:/app/config:ro
+      - ./tenants:/app/tenants:ro
+    depends_on: *app-depends
+    logging: *persistent-logging
+    restart: unless-stopped
+
+  flower:
+    image: job-hunt-automation-api:latest
+    env_file: .env
+    command: >-
+      sh -c 'celery -A job_hunt.worker.celery_app flower --port=5555
+      $${FLOWER_BASIC_AUTH:+--basic-auth=$${FLOWER_BASIC_AUTH}}'
+    ports: ["127.0.0.1:5555:5555"]
+    volumes:
+      - ./config:/app/config:ro
+      - ./tenants:/app/tenants:ro
+    depends_on: *app-depends
+    logging: *persistent-logging
+    restart: unless-stopped
+
+  litellm-db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: litellm
+      POSTGRES_USER: litellm
+      POSTGRES_PASSWORD: ${LITELLM_DATABASE_PASSWORD:?LITELLM_DATABASE_PASSWORD must be set}
+    volumes: ["litellm-db-data:/var/lib/postgresql/data"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U litellm -d litellm"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    logging: *persistent-logging
+    restart: unless-stopped
+
+  redis:
+    image: redis:7.4-alpine
+    command: redis-server --appendonly yes
+    volumes: ["redis-data:/data"]
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+    logging: *persistent-logging
+    restart: unless-stopped
+
+volumes:
+  artifacts:
+  litellm-db-data:
+  redis-data:

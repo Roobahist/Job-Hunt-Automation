@@ -1,0 +1,65 @@
+{
+  "groups": {
+    "job-fast": [
+      {"provider": "gemini", "model": "gemini-3.5-flash-lite"},
+      {"provider": "gemini", "model": "gemini-3.1-flash-lite"},
+      {"provider": "mistral", "model": "mistral-medium-latest"}
+    ],
+    "job-balanced": [
+      {"provider": "openrouter", "model": "z-ai/glm-5.2:free"},
+      {"provider": "openrouter", "model": "nvidia/nemotron-3-ultra-550b-a55b:free"},
+      {"provider": "openrouter", "model": "nvidia/nemotron-3-super-120b-a12b:free"},
+      {"provider": "openrouter", "model": "minimax/minimax-m3:free"},
+      {"provider": "openrouter", "model": "google/gemma-4-31b-it:free"},
+      {"provider": "gemini", "model": "gemini-3.7-flash"},
+      {"provider": "gemini", "model": "gemini-3.6-flash"},
+      {"provider": "gemini", "model": "gemini-3.5-flash"}
+    ],
+    "job-powerful": [
+      {"provider": "deepseek", "model": "deepseek-v4-flash"}
+    ],
+    "repair-fast": [
+      {"provider": "gemini", "model": "gemini-3.5-flash-lite"},
+      {"provider": "gemini", "model": "gemini-3.1-flash-lite"},
+      {"provider": "mistral", "model": "mistral-medium-latest"},
+      {"provider": "mistral", "model": "mistral-small-latest"}
+    ],
+    "repair-balanced": [
+      {"provider": "gemini", "model": "gemini-3.7-flash"},
+      {"provider": "gemini", "model": "gemini-3.6-flash"},
+      {"provider": "gemini", "model": "gemini-3.5-flash"},
+      {"provider": "mistral", "model": "mistral-small-latest"}
+    ]
+  },
+  "fallbacks": {
+    "job-powerful": ["job-balanced"],
+    "job-balanced": ["job-fast"],
+    "job-fast": [],
+    "repair-fast": ["repair-balanced"],
+    "repair-balanced": []
+  },
+  "providers": [
+    {
+      "name": "gemini",
+      "api_key_prefix": "GEMINI_API_KEY_",
+      "enabled": true,
+      "litellm_params": {"additional_drop_params": ["temperature", "top_p", "top_k"]}
+    },
+    {
+      "name": "deepseek",
+      "api_key_prefix": "DEEPSEEK_API_KEY_",
+      "enabled": true,
+      "litellm_params": {"thinking": {"type": "disabled"}}
+    },
+    {
+      "name": "mistral",
+      "api_key_prefix": "MISTRAL_API_KEY_",
+      "enabled": true
+    },
+    {
+      "name": "openrouter",
+      "api_key_prefix": "OPENROUTER_API_KEY_",
+      "enabled": true
+    }
+  ]
+}

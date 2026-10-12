@@ -1,0 +1,2486 @@
+{
+  "___FILLOUT_EXPORT_VERSION___": 2,
+  "template": {
+    "steps": {
+      "kz18": {
+        "id": "kz18",
+        "name": "Add a Job",
+        "type": "form",
+        "nextStep": {
+          "isFinal": false,
+          "branches": [],
+          "defaultNextStep": ""
+        },
+        "template": {
+          "widgets": {
+            "entryType": {
+              "id": "entryType",
+              "name": "Entry Type",
+              "type": "Dropdown",
+              "position": {
+                "row": 1,
+                "column": 0
+              },
+              "template": {
+                "label": {
+                  "logic": {
+                    "value": "<p>Entry Type</p>",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "regex": {
+                  "logic": {
+                    "value": "",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "caption": {
+                  "logic": {
+                    "value": "",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "options": {
+                  "staticOptions": [
+                    {
+                      "id": "ai",
+                      "label": {
+                        "logic": {
+                          "value": "AI",
+                          "references": {}
+                        },
+                        "expectedTypes": [
+                          "string"
+                        ],
+                        "___LOGIC_TYPE___": "pickerString"
+                      },
+                      "value": {
+                        "logic": {
+                          "value": "AI",
+                          "references": {}
+                        },
+                        "expectedTypes": [
+                          "string"
+                        ],
+                        "___LOGIC_TYPE___": "pickerString"
+                      }
+                    },
+                    {
+                      "id": "linkedin",
+                      "label": {
+                        "logic": {
+                          "value": "LinkedIn",
+                          "references": {}
+                        },
+                        "expectedTypes": [
+                          "string"
+                        ],
+                        "___LOGIC_TYPE___": "pickerString"
+                      },
+                      "value": {
+                        "logic": {
+                          "value": "LinkedIn",
+                          "references": {}
+                        },
+                        "expectedTypes": [
+                          "string"
+                        ],
+                        "___LOGIC_TYPE___": "pickerString"
+                      }
+                    },
+                    {
+                      "id": "indeed",
+                      "label": {
+                        "logic": {
+                          "value": "Indeed",
+                          "references": {}
+                        },
+                        "expectedTypes": [
+                          "string"
+                        ],
+                        "___LOGIC_TYPE___": "pickerString"
+                      },
+                      "value": {
+                        "logic": {
+                          "value": "Indeed",
+                          "references": {}
+                        },
+                        "expectedTypes": [
+                          "string"
+                        ],
+                        "___LOGIC_TYPE___": "pickerString"
+                      }
+                    },
+                    {
+                      "id": "url",
+                      "label": {
+                        "logic": {
+                          "value": "URL",
+                          "references": {}
+                        },
+                        "expectedTypes": [
+                          "string"
+                        ],
+                        "___LOGIC_TYPE___": "pickerString"
+                      },
+                      "value": {
+                        "logic": {
+                          "value": "URL",
+                          "references": {}
+                        },
+                        "expectedTypes": [
+                          "string"
+                        ],
+                        "___LOGIC_TYPE___": "pickerString"
+                      }
+                    },
+                    {
+                      "id": "external",
+                      "label": {
+                        "logic": {
+                          "value": "External",
+                          "references": {}
+                        },
+                        "expectedTypes": [
+                          "string"
+                        ],
+                        "___LOGIC_TYPE___": "pickerString"
+                      },
+                      "value": {
+                        "logic": {
+                          "value": "External",
+                          "references": {}
+                        },
+                        "expectedTypes": [
+                          "string"
+                        ],
+                        "___LOGIC_TYPE___": "pickerString"
+                      }
+                    }
+                  ]
+                },
+                "inHeader": false,
+                "required": {
+                  "logic": true,
+                  "expectedTypes": [
+                    "boolean"
+                  ],
+                  "___LOGIC_TYPE___": "logic"
+                },
+                "condition": {
+                  "logic": {
+                    "and": []
+                  },
+                  "expectedTypes": [
+                    "boolean"
+                  ],
+                  "___LOGIC_TYPE___": "logic"
+                },
+                "maxLength": {
+                  "logic": {
+                    "value": "",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "number"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "minLength": {
+                  "logic": {
+                    "value": "",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "number"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "alwaysHide": false,
+                "showOrHide": "show_when",
+                "placeholder": {
+                  "logic": {
+                    "value": "",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "defaultValue": {
+                  "logic": {
+                    "value": "AI",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string",
+                    "null"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "optionsToShow": [],
+                "optionsMappings": false,
+                "validationPattern": "none",
+                "showOrHideCondition": {
+                  "logic": {
+                    "and": []
+                  },
+                  "expectedTypes": [
+                    "boolean"
+                  ],
+                  "___LOGIC_TYPE___": "logic"
+                },
+                "randomizeOptionsOrder": false,
+                "validationErrorMessage": {
+                  "logic": {
+                    "value": "",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                }
+              }
+            },
+            "demoField36472c85": {
+              "id": "demoField36472c85",
+              "name": "Job URL",
+              "type": "URLInput",
+              "position": {
+                "row": 5,
+                "column": 0
+              },
+              "template": {
+                "label": {
+                  "logic": {
+                    "value": "<p>Job URL</p>",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "regex": {
+                  "logic": {
+                    "value": "",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "caption": {
+                  "logic": {
+                    "value": "",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "inHeader": false,
+                "required": {
+                  "logic": {
+                    "or": [
+                      {
+                        "===": [
+                          {
+                            "var": "kz18['entryType'].optionId"
+                          },
+                          {
+                            "pickerStringTemplate": {
+                              "value": "external",
+                              "references": {}
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "===": [
+                          {
+                            "var": "kz18['entryType'].optionId"
+                          },
+                          {
+                            "pickerStringTemplate": {
+                              "value": "url",
+                              "references": {}
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "expectedTypes": [
+                    "boolean"
+                  ],
+                  "___LOGIC_TYPE___": "logic"
+                },
+                "condition": {
+                  "logic": {
+                    "and": []
+                  },
+                  "expectedTypes": [
+                    "boolean"
+                  ],
+                  "___LOGIC_TYPE___": "logic"
+                },
+                "maxLength": {
+                  "logic": {
+                    "value": "",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "number"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "minLength": {
+                  "logic": {
+                    "value": "",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "number"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "alwaysHide": false,
+                "showOrHide": "show_when",
+                "placeholder": {
+                  "logic": {
+                    "value": "https://…",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "defaultValue": {
+                  "logic": {
+                    "value": "",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "validationPattern": "none",
+                "showOrHideCondition": {
+                  "logic": {
+                    "or": [
+                      {
+                        "===": [
+                          {
+                            "var": "kz18['entryType'].optionId"
+                          },
+                          {
+                            "pickerStringTemplate": {
+                              "value": "external",
+                              "references": {}
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "===": [
+                          {
+                            "var": "kz18['entryType'].optionId"
+                          },
+                          {
+                            "pickerStringTemplate": {
+                              "value": "url",
+                              "references": {}
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "expectedTypes": [
+                    "boolean"
+                  ],
+                  "___LOGIC_TYPE___": "logic"
+                },
+                "validationErrorMessage": {
+                  "logic": {
+                    "value": "Please enter a valid URL",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                }
+              }
+            },
+            "demoFieldd1f77d14": {
+              "id": "demoFieldd1f77d14",
+              "name": "External Job ID",
+              "type": "ShortAnswer",
+              "position": {
+                "row": 12,
+                "column": 0
+              },
+              "template": {
+                "label": {
+                  "logic": {
+                    "value": "<p>External Job ID</p>",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "regex": {
+                  "logic": {
+                    "value": "",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "caption": {
+                  "logic": {
+                    "value": "",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "inHeader": false,
+                "required": {
+                  "logic": false,
+                  "expectedTypes": [
+                    "boolean"
+                  ],
+                  "___LOGIC_TYPE___": "logic"
+                },
+                "condition": {
+                  "logic": {
+                    "and": []
+                  },
+                  "expectedTypes": [
+                    "boolean"
+                  ],
+                  "___LOGIC_TYPE___": "logic"
+                },
+                "maxLength": {
+                  "logic": {
+                    "value": "",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "number"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "minLength": {
+                  "logic": {
+                    "value": "",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "number"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "alwaysHide": false,
+                "showOrHide": "show_when",
+                "placeholder": {
+                  "logic": {
+                    "value": "Optional job-board or employer ID",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "defaultValue": {
+                  "logic": {
+                    "value": "",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "validationPattern": "none",
+                "showOrHideCondition": {
+                  "logic": {
+                    "and": [
+                      {
+                        "===": [
+                          {
+                            "var": "kz18['entryType'].optionId"
+                          },
+                          {
+                            "pickerStringTemplate": {
+                              "value": "external",
+                              "references": {}
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "expectedTypes": [
+                    "boolean"
+                  ],
+                  "___LOGIC_TYPE___": "logic"
+                },
+                "validationErrorMessage": {
+                  "logic": {
+                    "value": "",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                }
+              }
+            },
+            "demoFielda903bb44": {
+              "id": "demoFielda903bb44",
+              "name": "LinkedIn Job ID",
+              "type": "NumberInput",
+              "position": {
+                "row": 3,
+                "column": 0
+              },
+              "template": {
+                "label": {
+                  "logic": {
+                    "value": "<p>LinkedIn Job ID</p>",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "regex": {
+                  "logic": {
+                    "value": "",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "caption": {
+                  "logic": {
+                    "value": "",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "inHeader": false,
+                "required": {
+                  "logic": {
+                    "and": [
+                      {
+                        "===": [
+                          {
+                            "var": "kz18['entryType'].optionId"
+                          },
+                          {
+                            "pickerStringTemplate": {
+                              "value": "linkedin",
+                              "references": {}
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "expectedTypes": [
+                    "boolean"
+                  ],
+                  "___LOGIC_TYPE___": "logic"
+                },
+                "condition": {
+                  "logic": {
+                    "and": []
+                  },
+                  "expectedTypes": [
+                    "boolean"
+                  ],
+                  "___LOGIC_TYPE___": "logic"
+                },
+                "maxLength": {
+                  "logic": {
+                    "value": "",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "number"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "minLength": {
+                  "logic": {
+                    "value": "",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "number"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "alwaysHide": false,
+                "showOrHide": "show_when",
+                "placeholder": {
+                  "logic": {
+                    "value": "e.g. 4195028596",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "defaultValue": {
+                  "logic": {
+                    "value": "",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "number",
+                    "null"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "validationPattern": "none",
+                "showOrHideCondition": {
+                  "logic": {
+                    "and": [
+                      {
+                        "===": [
+                          {
+                            "var": "kz18['entryType'].optionId"
+                          },
+                          {
+                            "pickerStringTemplate": {
+                              "value": "linkedin",
+                              "references": {}
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "expectedTypes": [
+                    "boolean"
+                  ],
+                  "___LOGIC_TYPE___": "logic"
+                },
+                "validationErrorMessage": {
+                  "logic": {
+                    "value": "",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                }
+              }
+            },
+            "demoField11f633b8": {
+              "id": "demoField11f633b8",
+              "name": "Job Description",
+              "type": "LongAnswer",
+              "position": {
+                "row": 8,
+                "column": 0
+              },
+              "template": {
+                "rows": {
+                  "logic": {
+                    "value": "4",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "number"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "label": {
+                  "logic": {
+                    "value": "<p>Job Description</p>",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "regex": {
+                  "logic": {
+                    "value": "",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "caption": {
+                  "logic": {
+                    "value": "",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "inHeader": false,
+                "required": {
+                  "logic": {
+                    "and": [
+                      {
+                        "===": [
+                          {
+                            "var": "kz18['entryType'].optionId"
+                          },
+                          {
+                            "pickerStringTemplate": {
+                              "value": "external",
+                              "references": {}
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "expectedTypes": [
+                    "boolean"
+                  ],
+                  "___LOGIC_TYPE___": "logic"
+                },
+                "condition": {
+                  "logic": {
+                    "and": []
+                  },
+                  "expectedTypes": [
+                    "boolean"
+                  ],
+                  "___LOGIC_TYPE___": "logic"
+                },
+                "maxLength": {
+                  "logic": {
+                    "value": "",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "number"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "minLength": {
+                  "logic": {
+                    "value": "",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "number"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "alwaysHide": false,
+                "showOrHide": "show_when",
+                "placeholder": {
+                  "logic": {
+                    "value": "Paste the complete job description",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "showCounter": true,
+                "defaultValue": {
+                  "logic": {
+                    "value": "",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "validationPattern": "none",
+                "showOrHideCondition": {
+                  "logic": {
+                    "and": [
+                      {
+                        "===": [
+                          {
+                            "var": "kz18['entryType'].optionId"
+                          },
+                          {
+                            "pickerStringTemplate": {
+                              "value": "external",
+                              "references": {}
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "expectedTypes": [
+                    "boolean"
+                  ],
+                  "___LOGIC_TYPE___": "logic"
+                },
+                "validationErrorMessage": {
+                  "logic": {
+                    "value": "",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                }
+              }
+            },
+            "demoFielda77390ae": {
+              "id": "demoFielda77390ae",
+              "name": "Process Job",
+              "type": "Button",
+              "position": {
+                "row": 13,
+                "column": 0
+              },
+              "template": {
+                "text": {
+                  "logic": {
+                    "value": "Process Job",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "disabled": {
+                  "logic": {
+                    "and": []
+                  },
+                  "expectedTypes": [
+                    "boolean"
+                  ],
+                  "___LOGIC_TYPE___": "logic"
+                },
+                "inHeader": false,
+                "nextStep": {
+                  "isFinal": false,
+                  "branches": [],
+                  "defaultNextStep": "tkcu"
+                },
+                "alignment": "left",
+                "alwaysHide": false,
+                "showOrHide": "show_when",
+                "showBackButton": true,
+                "showSkipButton": false,
+                "backgroundColor": "",
+                "skipValidations": false,
+                "showOrHideCondition": {
+                  "logic": {
+                    "and": []
+                  },
+                  "expectedTypes": [
+                    "boolean"
+                  ],
+                  "___LOGIC_TYPE___": "logic"
+                }
+              }
+            },
+            "demoField8cf83086": {
+              "id": "demoField8cf83086",
+              "name": "Contract Type",
+              "type": "Dropdown",
+              "position": {
+                "row": 10,
+                "column": 0
+              },
+              "template": {
+                "label": {
+                  "logic": {
+                    "value": "<p>Contract Type</p>",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "regex": {
+                  "logic": {
+                    "value": "",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "caption": {
+                  "logic": {
+                    "value": "",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "options": {
+                  "staticOptions": [
+                    {
+                      "id": "fulltime",
+                      "label": {
+                        "logic": {
+                          "value": "Full-time",
+                          "references": {}
+                        },
+                        "expectedTypes": [
+                          "string"
+                        ],
+                        "___LOGIC_TYPE___": "pickerString"
+                      },
+                      "value": {
+                        "logic": {
+                          "value": "Full-time",
+                          "references": {}
+                        },
+                        "expectedTypes": [
+                          "string"
+                        ],
+                        "___LOGIC_TYPE___": "pickerString"
+                      }
+                    },
+                    {
+                      "id": "parttime",
+                      "label": {
+                        "logic": {
+                          "value": "Part-time",
+                          "references": {}
+                        },
+                        "expectedTypes": [
+                          "string"
+                        ],
+                        "___LOGIC_TYPE___": "pickerString"
+                      },
+                      "value": {
+                        "logic": {
+                          "value": "Part-time",
+                          "references": {}
+                        },
+                        "expectedTypes": [
+                          "string"
+                        ],
+                        "___LOGIC_TYPE___": "pickerString"
+                      }
+                    },
+                    {
+                      "id": "contract",
+                      "label": {
+                        "logic": {
+                          "value": "Contract",
+                          "references": {}
+                        },
+                        "expectedTypes": [
+                          "string"
+                        ],
+                        "___LOGIC_TYPE___": "pickerString"
+                      },
+                      "value": {
+                        "logic": {
+                          "value": "Contract",
+                          "references": {}
+                        },
+                        "expectedTypes": [
+                          "string"
+                        ],
+                        "___LOGIC_TYPE___": "pickerString"
+                      }
+                    },
+                    {
+                      "id": "temporary",
+                      "label": {
+                        "logic": {
+                          "value": "Temporary",
+                          "references": {}
+                        },
+                        "expectedTypes": [
+                          "string"
+                        ],
+                        "___LOGIC_TYPE___": "pickerString"
+                      },
+                      "value": {
+                        "logic": {
+                          "value": "Temporary",
+                          "references": {}
+                        },
+                        "expectedTypes": [
+                          "string"
+                        ],
+                        "___LOGIC_TYPE___": "pickerString"
+                      }
+                    },
+                    {
+                      "id": "internship",
+                      "label": {
+                        "logic": {
+                          "value": "Internship",
+                          "references": {}
+                        },
+                        "expectedTypes": [
+                          "string"
+                        ],
+                        "___LOGIC_TYPE___": "pickerString"
+                      },
+                      "value": {
+                        "logic": {
+                          "value": "Internship",
+                          "references": {}
+                        },
+                        "expectedTypes": [
+                          "string"
+                        ],
+                        "___LOGIC_TYPE___": "pickerString"
+                      }
+                    },
+                    {
+                      "id": "other",
+                      "label": {
+                        "logic": {
+                          "value": "Other",
+                          "references": {}
+                        },
+                        "expectedTypes": [
+                          "string"
+                        ],
+                        "___LOGIC_TYPE___": "pickerString"
+                      },
+                      "value": {
+                        "logic": {
+                          "value": "Other",
+                          "references": {}
+                        },
+                        "expectedTypes": [
+                          "string"
+                        ],
+                        "___LOGIC_TYPE___": "pickerString"
+                      }
+                    }
+                  ]
+                },
+                "inHeader": false,
+                "required": {
+                  "logic": false,
+                  "expectedTypes": [
+                    "boolean"
+                  ],
+                  "___LOGIC_TYPE___": "logic"
+                },
+                "condition": {
+                  "logic": {
+                    "and": []
+                  },
+                  "expectedTypes": [
+                    "boolean"
+                  ],
+                  "___LOGIC_TYPE___": "logic"
+                },
+                "maxLength": {
+                  "logic": {
+                    "value": "",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "number"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "minLength": {
+                  "logic": {
+                    "value": "",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "number"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "alwaysHide": false,
+                "showOrHide": "show_when",
+                "placeholder": {
+                  "logic": {
+                    "value": "",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "defaultValue": {
+                  "logic": {
+                    "value": "",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string",
+                    "null"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "optionsToShow": [],
+                "optionsMappings": false,
+                "validationPattern": "none",
+                "showOrHideCondition": {
+                  "logic": {
+                    "and": [
+                      {
+                        "===": [
+                          {
+                            "var": "kz18['entryType'].optionId"
+                          },
+                          {
+                            "pickerStringTemplate": {
+                              "value": "external",
+                              "references": {}
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "expectedTypes": [
+                    "boolean"
+                  ],
+                  "___LOGIC_TYPE___": "logic"
+                },
+                "randomizeOptionsOrder": false,
+                "validationErrorMessage": {
+                  "logic": {
+                    "value": "",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                }
+              }
+            },
+            "demoField2d374ace": {
+              "id": "demoField2d374ace",
+              "name": "Indeed Job ID",
+              "type": "ShortAnswer",
+              "position": {
+                "row": 4,
+                "column": 0
+              },
+              "template": {
+                "label": {
+                  "logic": {
+                    "value": "<p>Indeed Job ID</p>",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "regex": {
+                  "logic": {
+                    "value": "",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "caption": {
+                  "logic": {
+                    "value": "",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "inHeader": false,
+                "required": {
+                  "logic": {
+                    "and": [
+                      {
+                        "===": [
+                          {
+                            "var": "kz18['entryType'].optionId"
+                          },
+                          {
+                            "pickerStringTemplate": {
+                              "value": "indeed",
+                              "references": {}
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "expectedTypes": [
+                    "boolean"
+                  ],
+                  "___LOGIC_TYPE___": "logic"
+                },
+                "condition": {
+                  "logic": {
+                    "and": []
+                  },
+                  "expectedTypes": [
+                    "boolean"
+                  ],
+                  "___LOGIC_TYPE___": "logic"
+                },
+                "maxLength": {
+                  "logic": {
+                    "value": "",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "number"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "minLength": {
+                  "logic": {
+                    "value": "",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "number"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "alwaysHide": false,
+                "showOrHide": "show_when",
+                "placeholder": {
+                  "logic": {
+                    "value": "e.g. abc123def456",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "defaultValue": {
+                  "logic": {
+                    "value": "",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "validationPattern": "none",
+                "showOrHideCondition": {
+                  "logic": {
+                    "and": [
+                      {
+                        "===": [
+                          {
+                            "var": "kz18['entryType'].optionId"
+                          },
+                          {
+                            "pickerStringTemplate": {
+                              "value": "indeed",
+                              "references": {}
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "expectedTypes": [
+                    "boolean"
+                  ],
+                  "___LOGIC_TYPE___": "logic"
+                },
+                "validationErrorMessage": {
+                  "logic": {
+                    "value": "",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                }
+              }
+            },
+            "demoFielde14b9014": {
+              "id": "demoFielde14b9014",
+              "name": "Job Title",
+              "type": "ShortAnswer",
+              "position": {
+                "row": 7,
+                "column": 0
+              },
+              "template": {
+                "label": {
+                  "logic": {
+                    "value": "<p>Job Title</p>",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "regex": {
+                  "logic": {
+                    "value": "",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "caption": {
+                  "logic": {
+                    "value": "",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "inHeader": false,
+                "required": {
+                  "logic": {
+                    "and": [
+                      {
+                        "===": [
+                          {
+                            "var": "kz18['entryType'].optionId"
+                          },
+                          {
+                            "pickerStringTemplate": {
+                              "value": "external",
+                              "references": {}
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "expectedTypes": [
+                    "boolean"
+                  ],
+                  "___LOGIC_TYPE___": "logic"
+                },
+                "condition": {
+                  "logic": {
+                    "and": []
+                  },
+                  "expectedTypes": [
+                    "boolean"
+                  ],
+                  "___LOGIC_TYPE___": "logic"
+                },
+                "maxLength": {
+                  "logic": {
+                    "value": "",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "number"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "minLength": {
+                  "logic": {
+                    "value": "",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "number"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "alwaysHide": false,
+                "showOrHide": "show_when",
+                "placeholder": {
+                  "logic": {
+                    "value": "Example: Data Scientist",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "defaultValue": {
+                  "logic": {
+                    "value": "",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "validationPattern": "none",
+                "showOrHideCondition": {
+                  "logic": {
+                    "and": [
+                      {
+                        "===": [
+                          {
+                            "var": "kz18['entryType'].optionId"
+                          },
+                          {
+                            "pickerStringTemplate": {
+                              "value": "external",
+                              "references": {}
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "expectedTypes": [
+                    "boolean"
+                  ],
+                  "___LOGIC_TYPE___": "logic"
+                },
+                "validationErrorMessage": {
+                  "logic": {
+                    "value": "",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                }
+              }
+            },
+            "demoField0d32379e": {
+              "id": "demoField0d32379e",
+              "name": "Location",
+              "type": "ShortAnswer",
+              "position": {
+                "row": 9,
+                "column": 0
+              },
+              "template": {
+                "label": {
+                  "logic": {
+                    "value": "<p>Location</p>",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "regex": {
+                  "logic": {
+                    "value": "",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "caption": {
+                  "logic": {
+                    "value": "",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "inHeader": false,
+                "required": {
+                  "logic": false,
+                  "expectedTypes": [
+                    "boolean"
+                  ],
+                  "___LOGIC_TYPE___": "logic"
+                },
+                "condition": {
+                  "logic": {
+                    "and": []
+                  },
+                  "expectedTypes": [
+                    "boolean"
+                  ],
+                  "___LOGIC_TYPE___": "logic"
+                },
+                "maxLength": {
+                  "logic": {
+                    "value": "",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "number"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "minLength": {
+                  "logic": {
+                    "value": "",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "number"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "alwaysHide": false,
+                "showOrHide": "show_when",
+                "placeholder": {
+                  "logic": {
+                    "value": "Example: Calgary, AB",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "defaultValue": {
+                  "logic": {
+                    "value": "",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "validationPattern": "none",
+                "showOrHideCondition": {
+                  "logic": {
+                    "and": [
+                      {
+                        "===": [
+                          {
+                            "var": "kz18['entryType'].optionId"
+                          },
+                          {
+                            "pickerStringTemplate": {
+                              "value": "external",
+                              "references": {}
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "expectedTypes": [
+                    "boolean"
+                  ],
+                  "___LOGIC_TYPE___": "logic"
+                },
+                "validationErrorMessage": {
+                  "logic": {
+                    "value": "",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                }
+              }
+            },
+            "demoFieldad51d672": {
+              "id": "demoFieldad51d672",
+              "name": "Published Date",
+              "type": "DatePicker",
+              "position": {
+                "row": 11,
+                "column": 0
+              },
+              "template": {
+                "label": {
+                  "logic": {
+                    "value": "<p>Published Date</p>",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "regex": {
+                  "logic": {
+                    "value": "",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "caption": {
+                  "logic": {
+                    "value": "",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "maxDate": {
+                  "logic": {
+                    "value": "",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "minDate": {
+                  "logic": {
+                    "value": "",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "inHeader": false,
+                "required": {
+                  "logic": false,
+                  "expectedTypes": [
+                    "boolean"
+                  ],
+                  "___LOGIC_TYPE___": "logic"
+                },
+                "condition": {
+                  "logic": {
+                    "and": []
+                  },
+                  "expectedTypes": [
+                    "boolean"
+                  ],
+                  "___LOGIC_TYPE___": "logic"
+                },
+                "maxLength": {
+                  "logic": {
+                    "value": "",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "number"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "minLength": {
+                  "logic": {
+                    "value": "",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "number"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "alwaysHide": false,
+                "dateFormat": {
+                  "logic": {
+                    "value": "",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "dateOffset": 0,
+                "showOrHide": "show_when",
+                "placeholder": {
+                  "logic": {
+                    "value": "",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "defaultValue": {
+                  "logic": {
+                    "value": "",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "validationPattern": "none",
+                "showOrHideCondition": {
+                  "logic": {
+                    "and": [
+                      {
+                        "===": [
+                          {
+                            "var": "kz18['entryType'].optionId"
+                          },
+                          {
+                            "pickerStringTemplate": {
+                              "value": "external",
+                              "references": {}
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "expectedTypes": [
+                    "boolean"
+                  ],
+                  "___LOGIC_TYPE___": "logic"
+                },
+                "validationErrorMessage": {
+                  "logic": {
+                    "value": "",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                }
+              }
+            },
+            "demoFieldbfe4c4e1": {
+              "id": "demoFieldbfe4c4e1",
+              "name": "Company Name",
+              "type": "ShortAnswer",
+              "position": {
+                "row": 6,
+                "column": 0
+              },
+              "template": {
+                "label": {
+                  "logic": {
+                    "value": "<p>Company Name</p>",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "regex": {
+                  "logic": {
+                    "value": "",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "caption": {
+                  "logic": {
+                    "value": "",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "inHeader": false,
+                "required": {
+                  "logic": {
+                    "and": [
+                      {
+                        "===": [
+                          {
+                            "var": "kz18['entryType'].optionId"
+                          },
+                          {
+                            "pickerStringTemplate": {
+                              "value": "external",
+                              "references": {}
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "expectedTypes": [
+                    "boolean"
+                  ],
+                  "___LOGIC_TYPE___": "logic"
+                },
+                "condition": {
+                  "logic": {
+                    "and": []
+                  },
+                  "expectedTypes": [
+                    "boolean"
+                  ],
+                  "___LOGIC_TYPE___": "logic"
+                },
+                "maxLength": {
+                  "logic": {
+                    "value": "",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "number"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "minLength": {
+                  "logic": {
+                    "value": "",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "number"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "alwaysHide": false,
+                "showOrHide": "show_when",
+                "placeholder": {
+                  "logic": {
+                    "value": "Example: Alberta Health Services",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "defaultValue": {
+                  "logic": {
+                    "value": "",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "validationPattern": "none",
+                "showOrHideCondition": {
+                  "logic": {
+                    "and": [
+                      {
+                        "===": [
+                          {
+                            "var": "kz18['entryType'].optionId"
+                          },
+                          {
+                            "pickerStringTemplate": {
+                              "value": "external",
+                              "references": {}
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "expectedTypes": [
+                    "boolean"
+                  ],
+                  "___LOGIC_TYPE___": "logic"
+                },
+                "validationErrorMessage": {
+                  "logic": {
+                    "value": "",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                }
+              }
+            },
+            "demoFielddfea9138": {
+              "id": "demoFielddfea9138",
+              "name": "Page Content",
+              "type": "LongAnswer",
+              "position": {
+                "row": 2,
+                "column": 0
+              },
+              "template": {
+                "rows": {
+                  "logic": {
+                    "value": "4",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "number"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "label": {
+                  "logic": {
+                    "value": "<p>Page Content</p>",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "regex": {
+                  "logic": {
+                    "value": "",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "caption": {
+                  "logic": {
+                    "value": "",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "inHeader": false,
+                "required": {
+                  "logic": {
+                    "and": [
+                      {
+                        "===": [
+                          {
+                            "var": "kz18['entryType'].optionId"
+                          },
+                          {
+                            "pickerStringTemplate": {
+                              "value": "ai",
+                              "references": {}
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "expectedTypes": [
+                    "boolean"
+                  ],
+                  "___LOGIC_TYPE___": "logic"
+                },
+                "condition": {
+                  "logic": {
+                    "and": []
+                  },
+                  "expectedTypes": [
+                    "boolean"
+                  ],
+                  "___LOGIC_TYPE___": "logic"
+                },
+                "maxLength": {
+                  "logic": {
+                    "value": "",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "number"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "minLength": {
+                  "logic": {
+                    "value": "",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "number"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "alwaysHide": false,
+                "showOrHide": "show_when",
+                "placeholder": {
+                  "logic": {
+                    "value": "Paste the page content",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "showCounter": true,
+                "defaultValue": {
+                  "logic": {
+                    "value": "",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "validationPattern": "none",
+                "showOrHideCondition": {
+                  "logic": {
+                    "and": [
+                      {
+                        "===": [
+                          {
+                            "var": "kz18['entryType'].optionId"
+                          },
+                          {
+                            "pickerStringTemplate": {
+                              "value": "ai",
+                              "references": {}
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "expectedTypes": [
+                    "boolean"
+                  ],
+                  "___LOGIC_TYPE___": "logic"
+                },
+                "validationErrorMessage": {
+                  "logic": {
+                    "value": "",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                }
+              }
+            },
+            "demoField1d35558d": {
+              "id": "demoField1d35558d",
+              "name": "Add a Job",
+              "type": "Text",
+              "position": {
+                "row": 0,
+                "column": 0
+              },
+              "template": {
+                "contents": {
+                  "logic": {
+                    "value": "<h2>Add a Job</h2>",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "inHeader": false,
+                "alwaysHide": false,
+                "showOrHide": "show_when",
+                "showOrHideCondition": {
+                  "logic": {
+                    "and": []
+                  },
+                  "expectedTypes": [
+                    "boolean"
+                  ],
+                  "___LOGIC_TYPE___": "logic"
+                }
+              }
+            }
+          }
+        }
+      },
+      "tkcu": {
+        "id": "tkcu",
+        "name": "Ending",
+        "type": "ending",
+        "nextStep": {
+          "isFinal": true,
+          "branches": [],
+          "defaultNextStep": ""
+        },
+        "template": {
+          "type": "thank_you",
+          "widgets": {
+            "demoField8149e43c": {
+              "id": "demoField8149e43c",
+              "name": "Untitled ThankYou field",
+              "type": "ThankYou",
+              "position": {
+                "row": 1
+              },
+              "template": {
+                "hideIcon": false,
+                "alwaysHide": false,
+                "showOrHide": "show_when",
+                "hideBranding": false,
+                "richTitleText": {
+                  "logic": {
+                    "value": "Job submitted successfully!",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "showQuizScore": true,
+                "richSubtitleText": {
+                  "logic": {
+                    "value": "Redirecting back to submit another job...",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "showCheckoutDetails": true,
+                "showOrHideCondition": {
+                  "logic": {
+                    "and": []
+                  },
+                  "expectedTypes": [
+                    "boolean"
+                  ],
+                  "___LOGIC_TYPE___": "logic"
+                },
+                "showSchedulingDetails": true
+              }
+            },
+            "demoField88f16054": {
+              "id": "demoField88f16054",
+              "name": "Submit Another Job",
+              "type": "FillAgainButton",
+              "position": {
+                "row": 2
+              },
+              "template": {
+                "text": {
+                  "logic": {
+                    "value": "Submit Another Job",
+                    "references": {}
+                  },
+                  "expectedTypes": [
+                    "string"
+                  ],
+                  "___LOGIC_TYPE___": "pickerString"
+                },
+                "inHeader": false,
+                "alignment": "full",
+                "alwaysHide": false,
+                "showOrHide": "show_when",
+                "backgroundColor": "",
+                "startFromStepId": "",
+                "showOrHideCondition": {
+                  "logic": {
+                    "and": []
+                  },
+                  "expectedTypes": [
+                    "boolean"
+                  ],
+                  "___LOGIC_TYPE___": "logic"
+                },
+                "startFromStepEnabled": false
+              }
+            }
+          },
+          "confetti": true
+        }
+      }
+    },
+    "quizzes": {
+      "answers": {},
+      "enabled": false,
+      "settings": {
+        "disableShowingCorrectAnswers": false
+      }
+    },
+    "settings": {},
+    "firstStep": "kz18",
+    "urlParams": [],
+    "calculations": {},
+    "integrations": {
+      "demoFielda7b91588": {
+        "serviceId": -1,
+        "writeQuery": {
+          "id": "kLQXuqRSt3",
+          "config": {
+            "url": {
+              "logic": {
+                "value": "https://example.com/webhooks/fillout/YOUR_TENANT",
+                "references": {}
+              },
+              "expectedTypes": [
+                "string"
+              ],
+              "___LOGIC_TYPE___": "pickerString"
+            },
+            "body": [
+              {
+                "key": "entryType",
+                "value": {
+                  "logic": {
+                    "var": "kz18['entryType'].value"
+                  },
+                  "expectedTypes": [
+                    "any"
+                  ],
+                  "___LOGIC_TYPE___": "picker"
+                }
+              },
+              {
+                "key": "linkedinJobId",
+                "value": {
+                  "logic": {
+                    "var": "kz18['demoFielda903bb44'].value"
+                  },
+                  "expectedTypes": [
+                    "any"
+                  ],
+                  "___LOGIC_TYPE___": "picker"
+                }
+              },
+              {
+                "key": "indeedJobId",
+                "value": {
+                  "logic": {
+                    "var": "kz18['demoField2d374ace'].value"
+                  },
+                  "expectedTypes": [
+                    "any"
+                  ],
+                  "___LOGIC_TYPE___": "picker"
+                }
+              },
+              {
+                "key": "companyName",
+                "value": {
+                  "logic": {
+                    "var": "kz18['demoFieldbfe4c4e1'].value"
+                  },
+                  "expectedTypes": [
+                    "any"
+                  ],
+                  "___LOGIC_TYPE___": "picker"
+                }
+              },
+              {
+                "key": "jobTitle",
+                "value": {
+                  "logic": {
+                    "var": "kz18['demoFielde14b9014'].value"
+                  },
+                  "expectedTypes": [
+                    "any"
+                  ],
+                  "___LOGIC_TYPE___": "picker"
+                }
+              },
+              {
+                "key": "jobDescription",
+                "value": {
+                  "logic": {
+                    "var": "kz18['demoField11f633b8'].value"
+                  },
+                  "expectedTypes": [
+                    "any"
+                  ],
+                  "___LOGIC_TYPE___": "picker"
+                }
+              },
+              {
+                "key": "jobUrl",
+                "value": {
+                  "logic": {
+                    "var": "kz18['demoField36472c85'].value"
+                  },
+                  "expectedTypes": [
+                    "any"
+                  ],
+                  "___LOGIC_TYPE___": "picker"
+                }
+              },
+              {
+                "key": "location",
+                "value": {
+                  "logic": {
+                    "var": "kz18['demoField0d32379e'].value"
+                  },
+                  "expectedTypes": [
+                    "any"
+                  ],
+                  "___LOGIC_TYPE___": "picker"
+                }
+              },
+              {
+                "key": "contractType",
+                "value": {
+                  "logic": {
+                    "var": "kz18['demoField8cf83086'].value"
+                  },
+                  "expectedTypes": [
+                    "any"
+                  ],
+                  "___LOGIC_TYPE___": "picker"
+                }
+              },
+              {
+                "key": "publishedAt",
+                "value": {
+                  "logic": {
+                    "var": "kz18['demoFieldad51d672'].value"
+                  },
+                  "expectedTypes": [
+                    "any"
+                  ],
+                  "___LOGIC_TYPE___": "picker"
+                }
+              },
+              {
+                "key": "externalJobId",
+                "value": {
+                  "logic": {
+                    "var": "kz18['demoFieldd1f77d14'].value"
+                  },
+                  "expectedTypes": [
+                    "any"
+                  ],
+                  "___LOGIC_TYPE___": "picker"
+                }
+              },
+              {
+                "key": "pageContent",
+                "value": {
+                  "logic": {
+                    "var": "kz18['demoFielddfea9138'].value"
+                  },
+                  "expectedTypes": [
+                    "any"
+                  ],
+                  "___LOGIC_TYPE___": "picker"
+                }
+              }
+            ],
+            "cookies": [
+              {
+                "key": "",
+                "value": {
+                  "logic": {},
+                  "expectedTypes": [
+                    "any"
+                  ],
+                  "___LOGIC_TYPE___": "picker"
+                }
+              }
+            ],
+            "headers": [
+              {
+                "key": "Authorization",
+                "value": {
+                  "logic": {
+                    "stringLiteral": "Bearer REPLACE_WITH_TENANT_FILLOUT_SECRET"
+                  },
+                  "expectedTypes": [
+                    "any"
+                  ],
+                  "___LOGIC_TYPE___": "picker"
+                }
+              }
+            ],
+            "version": 2,
+            "simpleURL": {
+              "url": "https://example.com/webhooks/fillout/YOUR_TENANT"
+            },
+            "actionType": "post",
+            "webhookType": "advanced",
+            "urlParameters": [
+              {
+                "key": "",
+                "value": {
+                  "logic": {},
+                  "expectedTypes": [
+                    "any"
+                  ],
+                  "___LOGIC_TYPE___": "picker"
+                }
+              }
+            ]
+          }
+        },
+        "readQueries": {},
+        "serviceType": "rest"
+      }
+    },
+    "featuredThemeId": "dark"
+  },
+  "settings": {},
+  "workflows": [],
+  "type": "form"
+}

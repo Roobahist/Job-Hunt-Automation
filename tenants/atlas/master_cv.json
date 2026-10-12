@@ -1,0 +1,57 @@
+{
+  "sections": [
+    {
+      "type": "text",
+      "title": "PROFILE",
+      "content": [
+        "Product-oriented software professional with experience in workflow design, API integration and accessible interfaces."
+      ]
+    },
+    {
+      "type": "entries",
+      "title": "EXPERIENCE",
+      "entries": [
+        {
+          "title": "Product Engineer",
+          "date": "2024 - Present",
+          "secondary": "Fictional Studio",
+          "secondary_right": "Remote",
+          "url": "",
+          "icon": "",
+          "content": [
+            {
+              "text": "Built responsive tools for complex information workflows.",
+              "bullet": true
+            },
+            {
+              "text": "Collaborated with developers to turn prototypes into tested experiences.",
+              "bullet": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "education"
+    },
+    {
+      "type": "label_rows",
+      "title": "SKILLS",
+      "rows": [
+        {
+          "label": "Development",
+          "value": "JavaScript, HTML, CSS, Python"
+        },
+        {
+          "label": "Methods",
+          "value": "User research, prototyping, usability testing"
+        }
+      ]
+    },
+    {
+      "type": "references",
+      "title": "REFERENCES",
+      "items": []
+    }
+  ]
+}
